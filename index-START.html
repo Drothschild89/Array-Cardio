@@ -125,6 +125,7 @@
 
       // 8. Reduce Exercise
       // Sum up the instances of each of these
+
       const data = [
         "car",
         "car",
@@ -141,6 +142,15 @@
         "car",
         "truck",
       ];
+
+      let counter = {};
+      for (let vehicle of data) {
+        if (counter[vehicle]) {
+          counter[vehicle]++;
+        } else {
+          counter[vehicle] = 1;
+        }
+      }
     </script>
   </body>
 </html>
