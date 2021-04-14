@@ -95,14 +95,33 @@
 
       // Array.prototype.reduce()
       // 4. How many years did all the inventors live all together?
+      let totalYears = 0;
+      for (let i = 0; i < inventors.length; i++) {
+        let total = inventors[i].passed - inventors[i].year;
+        totalYears += total;
+      }
 
       // 5. Sort the inventors by years lived
+      let oldest = inventors.sort((a, b) => {
+        let lastGuy = a.passed - a.year;
+        let nextGuy = b.passed - b.year;
+        return lastGuy > nextGuy ? -1 : 1;
+      });
 
+      // console.table(oldest);
       // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
       // 7. sort Exercise
       // Sort the people alphabetically by last name
+
+      let alphabetically = people.sort((a, b) => {
+        let [aLast, aFirst] = a.split(", ");
+        let [bLast, bFirst] = b.split(", ");
+        return aLast > bLast ? 1 : -1;
+      });
+
+      // console.log(alphabetically);
 
       // 8. Reduce Exercise
       // Sum up the instances of each of these
